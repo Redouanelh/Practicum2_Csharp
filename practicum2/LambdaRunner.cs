@@ -40,7 +40,9 @@ namespace practicum2
             // (Ik wou hier eigenlijk een predicate, aangezien er een bool wordt gereturned, maar 't lukte me niet om meerdere parameters mee te geven aan een predicate)
 
             // methode ResetName herschreven als lambda-expressie
-            Action<Person> resetName = Methods.ResetName;
+            // Action<Person> resetName = Methods.ResetName;
+
+            Action<Person> resetName = x => x.Name = null;
             Person p = new Person { Name = "Jan" };
             resetName(p);
             output.AppendFormat("resetName, daarna (Name == null) = {0}\n", p.Name == null);
